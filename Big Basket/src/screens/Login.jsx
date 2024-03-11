@@ -28,6 +28,8 @@ export const Login = () => {
         if(!json.success){
             alert("Enter Valid Credintials")
         }else{
+            localStorage.setItem("authToken",json.authToken)
+            localStorage.getItem("authToken")
             alert("Login Succesfully")
             navigate("/")
         }
