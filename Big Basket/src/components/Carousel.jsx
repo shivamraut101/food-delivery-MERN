@@ -11,7 +11,7 @@ export const Carousel = () => {
     </form>
         </div>
       <div className="carousel-item active">
-        <img src="https://source.unsplash.com/random/900x700?pancakes" classNameName="d-block w-100" style={{maxWidth:"300px", maxHeight:"200px"}} alt="..." />
+        <img src="https://source.unsplash.com/random/900x700?pancakes" className="d-block w-100" style={{maxWidth:"300px", maxHeight:"200px"}} alt="..." />
       </div>
       <div className="carousel-item">
         <img src="https://source.unsplash.com/random/900x700?pizza" className="d-block w-100" style={{maxWidth:"300px", maxHeight:"200px"}} alt="..." />
