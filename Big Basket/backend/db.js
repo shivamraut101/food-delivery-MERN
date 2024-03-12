@@ -7,11 +7,16 @@ const mongooseMongoDB = async () => {
         await mongoose.connect(mongoURI);
         console.log('Connected Successfully from mongoose');
 
-        const fetched_data = await mongoose.connection.db.collection('food_items');
-        const data = await fetched_data.find({}).toArray();
-    
+        const fetched_data_food_items = await mongoose.connection.db.collection('food_items');
+        const data = await fetched_data_food_items.find({}).toArray();
             global.food_items = data;
-            console.log(global.food_items)
+            if(data){
+                const fetched_data_foodCategory = await mongoose.connection.db.collection('foodCategory')
+                const categoryData = await fetched_data_foodCategory.find({}).toArray();
+                global.foodCategory = categoryData 
+            }
+        
+            // console.log(global.food_items)
        
     } catch (error) {
         console.error('Error connecting to MongoDB:', error);
